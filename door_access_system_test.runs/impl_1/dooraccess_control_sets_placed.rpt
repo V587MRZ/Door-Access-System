@@ -1,0 +1,86 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Sun Apr 18 12:25:10 2021
+| Host         : LAPTOP-TFTI2QQT running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file dooraccess_control_sets_placed.rpt
+| Design       : dooraccess
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |     8 |
+|    Minimum number of control sets                        |     8 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    40 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |     8 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              13 |            6 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              41 |           12 |
+| Yes          | No                    | No                     |               1 |            1 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              17 |            5 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------+------------------+------------------+------------------+----------------+--------------+
+|      Clock Signal      |   Enable Signal  | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------+------------------+------------------+------------------+----------------+--------------+
+|  fsm/reset_reg_i_2_n_0 |                  |                  |                1 |              1 |         1.00 |
+|  sysclk_IBUF_BUFG      | door/hb/pulse    |                  |                1 |              1 |         1.00 |
+| ~comparator/state[0]   |                  |                  |                1 |              2 |         2.00 |
+|  sysclk_IBUF_BUFG      | ddb/hb/E[0]      | fsm/SR[0]        |                2 |              6 |         3.00 |
+|  sysclk_IBUF_BUFG      |                  |                  |                4 |             10 |         2.50 |
+|  sysclk_IBUF_BUFG      | ddb/ff1_reg[1]_0 | fsm/SR[0]        |                3 |             11 |         3.67 |
+|  sysclk_IBUF_BUFG      |                  | btn_reset_IBUF   |                5 |             18 |         3.60 |
+|  sysclk_IBUF_BUFG      |                  | fsm/SR[0]        |                7 |             23 |         3.29 |
++------------------------+------------------+------------------+------------------+----------------+--------------+
+
+
